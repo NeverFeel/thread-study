@@ -23,6 +23,11 @@ public class ThreadJoin extends Thread {
 		System.out.println(name+"运行开始");
 		for(int i=0; i<5; i++){
 			System.out.println(name+" "+count--);
+			try {
+				Thread.sleep((long)Math.random()*10);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
 		System.out.println(name+"运行结束");
 	}
